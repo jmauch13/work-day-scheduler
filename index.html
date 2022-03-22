@@ -27,6 +27,8 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+      
+      
     </header>
     <div class="container-fluid">
       
@@ -35,9 +37,9 @@
           <div class="input-group-prepend">
             <span class="input-group-text">09:00 a.m.</span>
           </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" data-hour="9" id="nineAm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
           
         
@@ -46,9 +48,9 @@
           <div class="input-group-prepend">
             <span class="input-group-text">10:00 a.m.</span>
           </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+        <textarea class="form-control" type="text" data-hour="10" id="tenAm" aria-label="With textarea"></textarea>
+        <div class="input-group-append" id="result">
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
         
         
@@ -57,9 +59,9 @@
             <div class="input-group-prepend">
               <span class="input-group-text">11:00 a.m.</span>
           </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" data-hour="11" id="elevenAm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
         
       <div class="w-100">
@@ -67,9 +69,9 @@
             <div class="input-group-prepend">
               <span class="input-group-text">12:00 p.m.</span>
           </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" data-hour="12" id="twelvePm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
 
       <div class="w-100">
@@ -77,9 +79,9 @@
             <div class="input-group-prepend">
               <span class="input-group-text">01:00 p.m.</span>
           </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" data-hour="1" id="onePm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
 
       <div class="w-100">
@@ -87,9 +89,9 @@
             <div class="input-group-prepend">
               <span class="input-group-text">02:00 p.m.</span>
           </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" data-hour="2" id="twoPm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
         
       <div class="w-100">
@@ -97,9 +99,9 @@
             <div class="input-group-prepend">
               <span class="input-group-text">03:00 p.m.</span>
             </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" data-hour="3" id="threePm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
 
       <div class="w-100">
@@ -107,9 +109,9 @@
             <div class="input-group-prepend">
               <span class="input-group-text">04:00 p.m.</span>
             </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" data-hour="4" id="fourPm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
 
       <div class="w-100">
@@ -117,17 +119,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text">05:00 p.m.</span>
           </div>
-        <textarea class="form-control" name="server" id="saveServer" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" data-hour="5" id="fivePm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+          <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
     </div>
 
-    <div id="trash">
-      <div class="w-100 bg-danger p-3 text-center text-light display-4">
-        Drop Here to Remove.
-      </div>
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
