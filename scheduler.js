@@ -6,8 +6,68 @@ function updateTime() {
     // updates the time element in the header
     $("#currentDay").text(currentDay.format("dddd, MMMM Do YYYY, h:mm:ss"));
 
-    // For coloring the past, present, and future time blocks
-    let now = moment().format("kk");
+
+// change background colors-------not changing the color
+var updateTime = function() {
+    var currentTime = moment().format('H');
+    var timeBlockElements = $(".textarea");
+    for (var i =0 ; i < timeBlockElements.length ; i++) {
+        var elementID = timeBlockElements[i].id;
+        var manipID = document.getElementById(timeBlockElements[i].id)
+        $(timeBlockElements[i].id).removeClass(".present .past .future");
+        if (elementID < currentTime) {
+            $(manipID).addClass("past");
+        } else if (elementID > currentTime) {
+            $(manipID).addClass("future");
+        } else {
+            $(manipID).addClass("present");
+        }
+    }
+}}
+setInterval(updateTime(), (1000 * 60) * 5);
+
+
+
+
+
+
+// change background color------not changing colors
+/*const rows = document.getElementsByClassName("form-control");
+let currentHour = parseInt(moment().format('H'));
+
+Array.from(rows).forEach(row => {
+    let
+        rowIdString = row.id,
+        rowHour;
+    if (rowIdString) {
+        rowHour = parseInt(rowIdString);
+    }
+    if (rowHour) {
+        if (currentHour === rowHour) {
+            setColor(row, "red");
+        }   else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) {
+            setColor(row, "green");
+        }   else if ((currentHour > rowHour) && (currentHour < rowHour + 6)) {
+            setColor(row, "lightgrey");
+        }   else {
+            setColor(row, "white");
+        }  
+    }
+});
+
+function setColor(element, color) {
+    element.style.backgroundColor = color;
+}}
+
+
+
+
+
+
+
+
+    // For coloring the past, present, and future time blocks----not changing colors
+    /*let now = moment().format("kk");
     for (let i = 0; i < scheduleElArray.length; i++) {
         scheduleElArray[i].removeClass("future past present");
 
@@ -22,7 +82,7 @@ function updateTime() {
             scheduleElArray[i].addClass("future");
         }
     }
-}
+}*/
 
 // textarea elements
 let saveBtn = $(".input-group-append");
