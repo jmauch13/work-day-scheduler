@@ -7,74 +7,16 @@ function updateTime() {
     $("#currentDay").text(currentDay.format("dddd, MMMM Do YYYY, h:mm:ss"));
 
 
-// change background colors-------not changing the color
-var updateTime = function() {
+
+    // For coloring the past, present, and future time blocks
     var currentTime = moment().format('H');
-    var timeBlockElements = $(".textarea");
-    for (var i =0 ; i < timeBlockElements.length ; i++) {
-        var elementID = timeBlockElements[i].id;
-        var manipID = document.getElementById(timeBlockElements[i].id)
-        $(timeBlockElements[i].id).removeClass(".present .past .future");
-        if (elementID < currentTime) {
-            $(manipID).addClass("past");
-        } else if (elementID > currentTime) {
-            $(manipID).addClass("future");
-        } else {
-            $(manipID).addClass("present");
-        }
-    }
-}}
-setInterval(updateTime(), (1000 * 60) * 5);
-
-
-
-
-
-
-// change background color------not changing colors
-/*const rows = document.getElementsByClassName("form-control");
-let currentHour = parseInt(moment().format('H'));
-
-Array.from(rows).forEach(row => {
-    let
-        rowIdString = row.id,
-        rowHour;
-    if (rowIdString) {
-        rowHour = parseInt(rowIdString);
-    }
-    if (rowHour) {
-        if (currentHour === rowHour) {
-            setColor(row, "red");
-        }   else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) {
-            setColor(row, "green");
-        }   else if ((currentHour > rowHour) && (currentHour < rowHour + 6)) {
-            setColor(row, "lightgrey");
-        }   else {
-            setColor(row, "white");
-        }  
-    }
-});
-
-function setColor(element, color) {
-    element.style.backgroundColor = color;
-}}
-
-
-
-
-
-
-
-
-    // For coloring the past, present, and future time blocks----not changing colors
-    /*let now = moment().format("kk");
-    for (let i = 0; i < scheduleElArray.length; i++) {
+    for (var i = 0; i < scheduleElArray.length; i++) {
         scheduleElArray[i].removeClass("future past present");
 
-        if (now > scheduleElArray[i].data("hour")) {
+        if (currentTime > scheduleElArray[i].data("hour")) {
             scheduleElArray[i].addClass("past");
 
-        } else if (now === scheduleElArray[i].attr("data-hour")) {
+        } else if (currentTime === scheduleElArray[i].attr("data-hour")) {
             scheduleElArray[i].addClass("present");
 
         } else {
@@ -82,7 +24,7 @@ function setColor(element, color) {
             scheduleElArray[i].addClass("future");
         }
     }
-}*/
+}
 
 // textarea elements
 let saveBtn = $(".input-group-append");
@@ -138,4 +80,10 @@ function handleFormSubmit(event) {
 
 saveBtn.on("click", handleFormSubmit);
 
+/*const textarea = document.getElementById('message');
+const btn = document.getElementById('btn');
+btn.addEventListener('click', function handleClick() {
+    console.log(textarea);
+    textarea = '';
+})*/
 

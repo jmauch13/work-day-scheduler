@@ -19,7 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
+    <title>Work Day Scheduler</title> 
   </head>
 
   <body>
@@ -27,7 +27,7 @@
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
-      
+      <button id="clearBtn">Clear Day!</button>
       
     </header>
     <div class="container-fluid">
@@ -37,7 +37,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">09:00 a.m.</span>
           </div>
-        <textarea class="form-control" type="text" data-hour="9" id="nineAm" aria-label="With textarea"></textarea>
+        <textarea class="form-control" type="text" name="message" data-hour="9" id="nineAm" aria-label="With textarea"></textarea>
         <div class="input-group-append">
           <button type="button" class="saveBtn"><i class="fas fa-cloud-upload-alt"></i></button>
       </div>
