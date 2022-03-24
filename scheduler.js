@@ -80,10 +80,6 @@ function handleFormSubmit(event) {
 
 saveBtn.on("click", handleFormSubmit);
 
-/*const textarea = document.getElementById('message');
-const btn = document.getElementById('btn');
-btn.addEventListener('click', function handleClick() {
-    console.log(textarea);
-    textarea = '';
-})*/
+
+
 
