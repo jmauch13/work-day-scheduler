@@ -12,5 +12,6 @@ Project was created with:
 ## Website Link
 https://jmauch13.github.io/work-day-scheduler/
 ## Website Image
+![screenshot](https://user-images.githubusercontent.com/96963955/160265496-05ca7eca-d070-4053-899f-c31502aeb27c.png)
 
 
